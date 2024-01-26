@@ -1,9 +1,24 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import * as ReactDOM from 'react-dom';
 import QuestionDetail from './QuestionDetail';
 
 const QuestionList = () => {
-    const questionList = [
+    const [questionsList, setQuestionsList] = useState([])
+    const questions_api = 'http://127.0.0.1:3000/api/v1/questions'
+    
+    const fetchQuestionList = () => {
+        fetch(questions_api)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data)
+            setQuestionsList(data)
+        })
+    }
+    useEffect(() => {
+        fetchQuestionList()
+    }, [])
+    /* const questionList = [
         {
             id: 1,
             title: 'How can you check if a key is present in a Hash?',
@@ -56,11 +71,11 @@ const QuestionList = () => {
         }, 
 
 
-    ]
+    ] */
     return(
         <div className='row'>
             <div className='col-lg-10 mx-auto'>
-                {questionList.map((question) =>
+                {questionsList.map((question) =>
                     <QuestionDetail question={question} key={question.id}/>
                 )}
             </div>

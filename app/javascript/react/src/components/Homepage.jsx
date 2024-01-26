@@ -4,14 +4,16 @@ import QuestionList from './QuestionList';
 import { ChakraProvider } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 
-const Homepage = () => {
-    return (
-        <div className='container'>
-            <h1>Homepage</h1>
-            <p className='lead'>this home its working, finally i made it! and now i have to make some changes</p>
-            <QuestionList/>
-        </div>
-    );
+class Homepage extends React.Component {
+    render() {
+        return (
+            <div className='container'>
+                <h1>Homepage</h1>
+                <p className='lead'>this home its working, finally i made it! and now i have to make some changes</p>
+                <QuestionList/>
+            </div>
+        );
+     }
 };
 const root = ReactDOM.createRoot(document.getElementById('homepage'));
 root.render(
