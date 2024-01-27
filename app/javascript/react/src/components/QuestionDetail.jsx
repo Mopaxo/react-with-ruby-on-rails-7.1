@@ -5,14 +5,25 @@ class QuestionDetail extends React.Component {
 
     constructor(props) { 
         super(props);
-        this.state = { likeCount: 0 } 
+        this.state = { 
+        likeCount: 0,
+        dislikeCount: 0 
+        } 
         this.updateLikeCount = this.updateLikeCount.bind(this);
+        this.updateDislikeCount= this.updateDislikeCount.bind(this);
     }
 
     updateLikeCount() {
         this.setState(function(state) {
             return { 
                 likeCount: state.likeCount + 1 
+            }
+        })
+    }
+    updateDislikeCount() {
+        this.setState(function(state) {
+            return { 
+                dislikeCount: state.dislikeCount + 1 
             }
         })
     }
@@ -24,15 +35,25 @@ class QuestionDetail extends React.Component {
                         <p className='lead'>
                             <span className='badge bg-danger'>{this.props.question.tag}</span>
                         </p>
-                        <button className= "btn btn-primary mt-1" onClick={this.updateLikeCount}> 
+
+                        <button type="button" className="btn btn-primary position-relative" onClick={this.updateLikeCount} style={{marginRight: 1 + 'em'}}>
                             <i className="bi bi-hand-thumbs-up"></i>
-                        </button>
-                        {
+                            {
                             this.state.likeCount > 0 ?
-                            <span className="badge bg-info">{
+                            <   span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{
                                 this.state.likeCount
-                            }</span> : ''
-                        }
+                                }</span> : ''
+                            }
+                        </button>
+                        <button type="button" className="btn btn-primary position-relative" onClick={this.updateDislikeCount}>
+                            <i class="bi bi-hand-thumbs-down"></i>
+                            {
+                            this.state.dislikeCount > 0 ?
+                            <   span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{
+                                this.state.dislikeCount
+                                }</span> : ''
+                            }
+                        </button>
                 </div>
             </div>
         )    
