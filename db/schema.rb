@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_26_185729) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_27_145330) do
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.string "tag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "likes_count", default: 0
+    t.integer "dislikes_count", default: 0
   end
 
 end
