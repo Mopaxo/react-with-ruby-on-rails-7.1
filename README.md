@@ -5,9 +5,7 @@ This proyect was originally to be used to learng Ruby on Rails Api Building and 
 I made a React & Rails application to show Answers of different topics, specifically to learn about some interview related questions.
 In this Proyect Blog that i made, i worked and learned about:
 
-- Choosing the best Rails version and packages and requerimients to this proyect.
-
-- Installing NPM Packages and Gems.
+- Choosing the best Rails version, create a rails proyect from the scratch and installing NPM Packages & Gems to this proyect.
 
 - How to create new models, add attributes and create database migrations. Convenience over Configuration.
 
@@ -20,5 +18,3 @@ In this Proyect Blog that i made, i worked and learned about:
 - How to use Rails Console and make requets about different data.
 
 - How to fix GitHub issues and get the Job Done.
-
-
