@@ -29,9 +29,14 @@ class Api::V1::QuestionsController < ApplicationController
             render json: {data: @question.errors.full_messages, status: 'failure'}, status: :unprocessable_entity
         end
     end
+    def get_tags
+        tags_list = Question.distinct.pluck(:tag)
+        render json: tags_list, status: :ok
+    end
     private
 
     def question_params
         params.require(:question).permit(:title, :tag)
-    end 
+    end
+    
 end

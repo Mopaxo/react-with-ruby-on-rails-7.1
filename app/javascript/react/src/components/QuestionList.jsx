@@ -13,6 +13,7 @@ const QuestionList = () => {
     { label: "React", value: 3 },
     { label: "Bootstrap", value: 4 },
     { label: "Javascript", value: 5 },
+    { label: "Data Structure", value: 6 },
   ];
   const [questionsList, setQuestionsList] = useState([]);
   const [selectedOption, setSelectedOption] = useState(questionsTags[0].value);
