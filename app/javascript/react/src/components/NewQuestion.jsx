@@ -4,12 +4,12 @@ import * as ReactDOM from "react-dom";
 import ServerSideError from "./ServerSideError";
 const NewQuestion = () => {
   const questionsTags = [
-    { label: "Ruby", value: 0 },
-    { label: "Rails", value: 1 },
-    { label: "React", value: 2 },
-    { label: "Bootstrap", value: 3 },
-    { label: "Javascript", value: 4 },
-    { label: "Data Structure", value: 5 },
+    { label: "Ruby", value: "1" },
+    { label: "Rails", value: "2" },
+    { label: "React", value: "3" },
+    { label: "Bootstrap", value: "4" },
+    { label: "Javascript", value: "5" },
+    { label: "Data Structure", value: "6" },
   ];
   /* const [title, setTitle] = useState('');
   const [tag, setTag] = useState(questionsTags[0].value);
@@ -25,7 +25,7 @@ const NewQuestion = () => {
 
   const [formField, setFormField] = useState({
     title: '',
-    tag: questionsTags[0].value
+    tag: questionsTags[0].label
   });
   const handleQuestionSubmit = (event) => {
     event.preventDefault();
@@ -73,7 +73,7 @@ const NewQuestion = () => {
       <div className="modal-dialog modal-lg">
         <div className="modal-content">
           <div className="modal-header">
-            <h2 className="modal-title fs-5" id="staticBackdropLabel">
+            <h2 className="modal-title fs-5" id="staticBaJavascriptckdropLabel">
               Write your question and help us improve it!
             </h2>
             <button
@@ -104,14 +104,14 @@ const NewQuestion = () => {
                 </div>
             </div>
             <div className="modal-footer">
-              <button
+              {/* <button
                 type="button"
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Close
-              </button>
-              <button type="submit" className="btn btn-info">
+              </button> */}
+              <button type="submit" className="btn btn-info" data-bs-dismiss="modal">
                 Commit Question!
               </button>
             </div>
