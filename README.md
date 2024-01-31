@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This proyect was originally to be used to learng Ruby on Rails Api Building and Fetching with ReactJS.
 
-Things you may want to cover:
+I made a React & Rails application to show Answers of different topics, specifically to learn about some interview related questions.
+In this Proyect Blog that i made, i worked with:
 
-* Ruby version
+- Choose and Learning about Ruby on Rails Versions and Requeriments.
 
-* System dependencies
+- NPM Packages and Gems to install to get this Proyect Done.
 
-* Configuration
+- Convenience over Configuration, learning how to create new models, add attributes and create database migrations.
 
-* Database creation
+- How to initialize the database with a Seeds.rb file to test my API's functionality.
+  
+- How to Manipulate the component data in ReactJS and how comunicate this propierties in my API's methods.
 
-* Database initialization
+- How to create a API and methods to use with protocols like: PUT, GET & POST.
 
-* How to run the test suite
+- How to use Rails Console and make requets about different data.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...

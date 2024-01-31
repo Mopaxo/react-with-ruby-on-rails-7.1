@@ -10,7 +10,7 @@ class Homepage extends React.Component {
             <div className='container'>
                 <div className='row mt-2'>
                     <div className='col-lg-10 mx-auto'>
-                        <h1>React & Rails Answers Blog!</h1>
+                        <h1>React Rails Q&A Blog!</h1>
                         <p className='lead'>this home its working, finally i made it! and now i have to make some changes</p>
                     </div>
                 </div>
