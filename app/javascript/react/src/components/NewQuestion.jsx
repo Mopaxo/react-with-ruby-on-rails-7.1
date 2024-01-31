@@ -98,7 +98,7 @@ const NewQuestion = () => {
                     </label>
                     <select className="form-select form-select-lg rounded 1" value={formField.tag} onChange={event => handleFormFields(event)} name="tag">
                         {questionsTags.map(tag => (
-                          <option key={tag.value} value={tag.value}>{tag.label}</option>  
+                          <option key={tag.value} value={tag.label}>{tag.label}</option>  
                         ))}
                     </select>
                 </div>
