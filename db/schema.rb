@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_27_145330) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_31_215446) do
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.string "tag"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_27_145330) do
     t.datetime "updated_at", null: false
     t.integer "likes_count", default: 0
     t.integer "dislikes_count", default: 0
+    t.text "answer"
   end
 
 end

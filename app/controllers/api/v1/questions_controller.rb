@@ -10,7 +10,6 @@ class Api::V1::QuestionsController < ApplicationController
         end
         render json: @questions, status: :ok
     end
-
     def update_counter
         @question = Question.find(params[:id])
         if params[:count_for] == 'like'
@@ -20,11 +19,18 @@ class Api::V1::QuestionsController < ApplicationController
         end
         render json: @question, status: :ok
     end
-
     def create
         @question = Question.new(question_params)
         if @question.save
             render json: {data: @question, status: 'success'}, status: :ok
+        else
+            render json: {data: @question.errors.full_messages, status: 'failure'}, status: :unprocessable_entity
+        end
+    end
+    def destroy
+        @question = Question.find(params[:id])
+        if @question.destroy
+            render json: { status: 'success', message: 'Question deleted successfully'}, status: :ok
         else
             render json: {data: @question.errors.full_messages, status: 'failure'}, status: :unprocessable_entity
         end

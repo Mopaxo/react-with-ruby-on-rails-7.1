@@ -19,14 +19,17 @@ const NewQuestion = () => {
   const handleTagChange = (event) => {
     setTag(event.target.value);
   } */
+
+  /* Handling ServerSide Errors */
   const [isServerSideError, setIsServerSideError] = useState(false);
   const [serverErrors, setServerErrors] = useState([]);
 
-
+  /* Handling the form submission data, title and tag */
   const [formField, setFormField] = useState({
     title: '',
     tag: questionsTags[0].label
   });
+  
   const handleQuestionSubmit = (event) => {
     event.preventDefault();
     console.log(formField);
@@ -37,7 +40,7 @@ const NewQuestion = () => {
   }
 
   const createQuestion = (data) => {
-    fetch('http://127.0.0.1:3000/api/v1/questions', {
+    fetch('/api/v1/questions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -104,14 +107,7 @@ const NewQuestion = () => {
                 </div>
             </div>
             <div className="modal-footer">
-              {/* <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button> */}
-              <button type="submit" className="btn btn-info" data-bs-dismiss="modal">
+              <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">
                 Commit Question!
               </button>
             </div>

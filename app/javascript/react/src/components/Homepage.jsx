@@ -11,7 +11,7 @@ class Homepage extends React.Component {
                 <div className='row mt-2'>
                     <div className='col-lg-10 mx-auto'>
                         <h1>React Rails Q&A Blog!</h1>
-                        <p className='lead'>this home its working, finally i made it! and now i have to make some changes</p>
+                        <p className='lead'>Welcome to our Interview Q&A Blog!, right now mostly about ReactJS and Rails</p>
                     </div>
                 </div>
                 <QuestionList/>
