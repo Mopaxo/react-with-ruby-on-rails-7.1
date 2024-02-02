@@ -52,7 +52,7 @@ const DeleteQuestion = ({id}) => {
       >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-            <form onSubmit={handleQuestionDelete}>
+            <form name="handleQuestionDelete" onSubmit={handleQuestionDelete}>
               <div className="modal-header">
                 <h1 className="modal-title fs-5" id="exampleModalLabel">
                   Deleting Question

@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import DeleteQuestion from "./DeleteQuestion";
+import WriteAnswer from "./WriteAnswer";
 
 class QuestionDetail extends React.Component {
   /* Handling the props data of the QuestionDetail */
@@ -88,8 +89,11 @@ class QuestionDetail extends React.Component {
                 )}
               </button>
             </div>
+            
             {/* trash button to the right side of the card with ms-auto property */}
             <div className="ms-auto">
+              
+              <WriteAnswer/>
               <DeleteQuestion id={this.props.question.id}/>
             </div>
           </div>

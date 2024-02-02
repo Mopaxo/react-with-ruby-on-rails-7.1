@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :questions, only: [:index, :create, :destroy] do
         member do
           put :update_counter
+          put :update_answer
         end
         collection do
           get :get_tags
