@@ -10,7 +10,7 @@ const WriteAnswer = () => {
         className="btn btn-warning position-relative"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
-        style={{marginRight: "8px"}}
+        style={{ marginRight: "8px" }}
       >
         <i className="bi bi-pencil-square"> Answer! </i>
       </button>
@@ -47,7 +47,6 @@ const WriteAnswer = () => {
                     id="recipient-name"
                   />
                 </div>
-                
               </form>
             </div>
             <div className="modal-footer">
