@@ -2,16 +2,36 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import * as ReactDOM from "react-dom";
 
-const DeleteQuestion = () => {
-  /* const [isServerSideError, setIsServerSideError] = useState(false);
+const DeleteQuestion = ({id}) => {
+  const [isServerSideError, setIsServerSideError] = useState(false);
   const [serverErrors, setServerErrors] = useState([]);
   const handleQuestionDelete = (event) => {
     event.preventDefault();
-    deleteQuestion();
+    updatedeleteQuestion(id);
   };
-  const deleteQuestion = () => {
-    fetch;
-  }; */
+  const updatedeleteQuestion = (id) => {
+    fetch(`/api/v1/questions/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        if (data["status"] === "failure") {
+          setIsServerSideError(true);
+          setServerErrors(data["data"]);
+        } else {
+          setIsServerSideError(false);
+          setServerErrors([]);
+        }
+      })
+      .catch((error) => {
+        console.log("Error:", error);
+      });
+  };
+  
   return (
     <>
       <button
@@ -32,30 +52,33 @@ const DeleteQuestion = () => {
       >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Deleting Question
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">
-              {" "}
-              Are you sure you want to delete the question?{" "}
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-danger"
-                data-bs-dismiss="modal"
-              >
-                Yes, Delete it!
-              </button>
-            </div>
+            <form onSubmit={handleQuestionDelete}>
+              <div className="modal-header">
+                <h1 className="modal-title fs-5" id="exampleModalLabel">
+                  Deleting Question
+                </h1>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="modal-body">
+                {" "}
+                Are you sure you want to delete the question?{" "}
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  data-bs-dismiss="modal"
+                  onClick={handleQuestionDelete}
+                >
+                  Yes, Delete it!
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

@@ -58,7 +58,6 @@ class QuestionDetail extends React.Component {
           <p className="lead">
             <span className="badge bg-danger">{this.props.question.tag}</span>
           </p>
-
           {/* Elements inside this row will be flexibles and they use the space between them*/}
           <div className="d-flex justify-content-between">
             {/* Like and dislike buttons will be align horizontal togheter */}
@@ -91,7 +90,7 @@ class QuestionDetail extends React.Component {
             </div>
             {/* trash button to the right side of the card with ms-auto property */}
             <div className="ms-auto">
-              <DeleteQuestion />
+              <DeleteQuestion id={this.props.question.id}/>
             </div>
           </div>
         </div>
