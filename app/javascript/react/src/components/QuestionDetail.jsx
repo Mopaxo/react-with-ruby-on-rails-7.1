@@ -2,6 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import DeleteQuestion from "./DeleteQuestion";
 import WriteAnswer from "./WriteAnswer";
+import ShowAnswer from "./ShowAnswer";
 
 class QuestionDetail extends React.Component {
   /* Handling the props data of the QuestionDetail */
@@ -97,6 +98,7 @@ class QuestionDetail extends React.Component {
             </div>
           </div>
         </div>
+        {this.props.question.answer != null && <ShowAnswer id={this.props.question.id}/>}
       </div>
     );
   }
