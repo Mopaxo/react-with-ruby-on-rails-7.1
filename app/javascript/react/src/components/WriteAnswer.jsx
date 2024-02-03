@@ -60,7 +60,7 @@ const WriteAnswer = ({ id }) => {
                 className="modal-title fs-5"
                 id="exampleModalLabelWriteAnswer"
               >
-                New Answer
+                What its the answer to the question?
               </h1>
               <button
                 type="button"
