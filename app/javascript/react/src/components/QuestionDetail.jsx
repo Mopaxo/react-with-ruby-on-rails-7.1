@@ -92,7 +92,7 @@ class QuestionDetail extends React.Component {
             
             {/* trash button to the right side of the card with ms-auto property */}
             <div className="ms-auto">
-              {this.props.question.answer === null && <WriteAnswer/>}
+              {this.props.question.answer === null && <WriteAnswer id={this.props.question.id}/>}
               <DeleteQuestion id={this.props.question.id}/>
             </div>
           </div>
