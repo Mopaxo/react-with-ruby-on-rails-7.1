@@ -92,8 +92,7 @@ class QuestionDetail extends React.Component {
             
             {/* trash button to the right side of the card with ms-auto property */}
             <div className="ms-auto">
-              
-              <WriteAnswer/>
+              {this.props.question.answer === null && <WriteAnswer/>}
               <DeleteQuestion id={this.props.question.id}/>
             </div>
           </div>
@@ -102,28 +101,5 @@ class QuestionDetail extends React.Component {
     );
   }
 }
-/* const QuestionDetail = (props) => {
 
-    const [likeCount, setLikeCount] = useState(0);
-
-    return (
-        <div className='card rounded mt-3'>
-            <div className='card-body'>
-                <h3 className='card-title'>{props.question.title}</h3>
-                    <p className='lead'>
-                        <span className='badge bg-danger'>{props.question.tag}</span>
-                    </p>
-                    <button className= "btn btn-primary mt-1" onClick={() => setLikeCount(likeCount + 1)}> 
-                        <i className="bi bi-hand-thumbs-up"></i>
-                    </button>
-                    {
-                        likeCount > 0 ?
-                        <span className="badge bg-info">{
-                            likeCount
-                        }</span> : ''
-                    }
-            </div>
-        </div>
-    )
-} */
 export default QuestionDetail;

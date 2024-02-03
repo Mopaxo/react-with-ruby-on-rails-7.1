@@ -9,7 +9,7 @@ const WriteAnswer = () => {
         type="button"
         className="btn btn-warning position-relative"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        data-bs-target="#exampleModalWriteAnswer" // Cambiado el valor aquí
         style={{ marginRight: "8px" }}
       >
         <i className="bi bi-pencil-square"> Answer! </i>
@@ -17,15 +17,15 @@ const WriteAnswer = () => {
 
       <div
         className="modal fade"
-        id="exampleModal"
+        id="exampleModalWriteAnswer" // Cambiado el valor aquí
         tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby="exampleModalLabelWriteAnswer"
         aria-hidden="true"
       >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
+              <h1 className="modal-title fs-5" id="exampleModalLabelWriteAnswer">
                 New Answer
               </h1>
               <button
@@ -39,7 +39,7 @@ const WriteAnswer = () => {
               <form name="handleWriteQuestion">
                 <div className="mb-3">
                   <label htmlFor="recipient-name" className="col-form-label">
-                    Write your new Answer:
+                    Write your Solution:
                   </label>
                   <input
                     type="text"

@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import * as ReactDOM from "react-dom";
 
-const DeleteQuestion = ({id}) => {
+const DeleteQuestion = ({ id }) => {
   const [isServerSideError, setIsServerSideError] = useState(false);
   const [serverErrors, setServerErrors] = useState([]);
   const handleQuestionDelete = (event) => {
@@ -31,30 +31,33 @@ const DeleteQuestion = ({id}) => {
         console.log("Error:", error);
       });
   };
-  
+
   return (
     <>
       <button
         type="button"
         className="btn btn-danger position-relative"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        data-bs-target="#exampleModalDeleteQuestion"
       >
         <i className="bi bi-trash3-fill"></i>
       </button>
 
       <div
         className="modal fade"
-        id="exampleModal"
+        id="exampleModalDeleteQuestion"
         tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby="exampleModalLabelDeleteQuestion"
         aria-hidden="true"
       >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <form name="handleQuestionDelete" onSubmit={handleQuestionDelete}>
               <div className="modal-header">
-                <h1 className="modal-title fs-5" id="exampleModalLabel">
+                <h1
+                  className="modal-title fs-5"
+                  id="exampleModalLabelDeleteQuestion"
+                >
                   Deleting Question
                 </h1>
                 <button
