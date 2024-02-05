@@ -27,6 +27,10 @@ class Api::V1::QuestionsController < ApplicationController
             render json: { data: @question.errors.full_messages, status: 'failure' }, status: :unprocessable_entity
         end
     end
+    def show_answer
+        @question = Question.find(params[:id])
+        render json: {answer: @question.answer}, status: :ok
+    end
     def create
         @question = Question.new(question_params)
         if @question.save

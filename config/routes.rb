@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         member do
           put :update_counter
           put :update_answer
+          get :show_answer
         end
         collection do
           get :get_tags
