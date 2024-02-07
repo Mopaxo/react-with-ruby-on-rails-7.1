@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import * as ReactDOM from "react-dom";
 import Loader from "./Loader";
+import EditAnswer from "./EditAnswer";
 
 const ShowAnswer = ({ id }) => {
   // Estado para controlar si el componente está abierto o cerrado
@@ -80,6 +81,8 @@ const ShowAnswer = ({ id }) => {
               <>
                 {/* Mostrar la respuesta obtenida del servidor */}
                 <strong>A:</strong> {answer ? answer : "Loading answer..."}
+                
+                <EditAnswer id={id}/>
               </>
             )}
           </div>
