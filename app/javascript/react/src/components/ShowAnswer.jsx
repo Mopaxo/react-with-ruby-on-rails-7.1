@@ -79,10 +79,15 @@ const ShowAnswer = ({ id }) => {
               </div>
             ) : (
               <>
-                {/* Mostrar la respuesta obtenida del servidor */}
-                <strong>A:</strong> {answer ? answer : "Loading answer..."}
-                
-                <EditAnswer id={id}/>
+                <div className="d-flex justify-content-between align-items-center">
+                  {/* Mostrar la respuesta obtenida del servidor */}
+                  <div>
+                    <strong>A:</strong> {answer ? answer : "Loading answer..."}
+                  </div>
+
+                  {/* Botón para editar la respuesta */}
+                  <EditAnswer id={id} />
+                </div>
               </>
             )}
           </div>
