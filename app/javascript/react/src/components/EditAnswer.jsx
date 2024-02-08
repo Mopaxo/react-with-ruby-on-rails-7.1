@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import * as ReactDOM from "react-dom";
 
-const EditAnswer = ({ id }) => {
+const EditAnswer = ({ id , updateAnswer}) => {
     const [isServerSideError, setIsServerSideError] = useState(false);
     const [serverErrors, setServerErrors] = useState([]);
     const [answer, setAnswer] = useState("");
@@ -30,6 +30,8 @@ const EditAnswer = ({ id }) => {
             setIsServerSideError(false);
             setServerErrors([]);
             setAnswer("");
+            // Llama a la función updateAnswer del padre con la nueva respuesta
+            updateAnswer(data.newAnswer);
           }
         })
         .catch((error) => {

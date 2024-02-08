@@ -42,7 +42,11 @@ const ShowAnswer = ({ id }) => {
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
-
+  const updateAnswer = (newAnswer) => {
+    console.log("Received new answer:", newAnswer);
+    setAnswer(newAnswer);
+  };
+  
   return (
     <div className="accordion" id={`accordion${id}`}>
       <div className="accordion-item">
@@ -86,7 +90,7 @@ const ShowAnswer = ({ id }) => {
                   </div>
 
                   {/* Botón para editar la respuesta */}
-                  <EditAnswer id={id} />
+                  <EditAnswer id={id} updateAnswer={updateAnswer}/>
                 </div>
               </>
             )}
