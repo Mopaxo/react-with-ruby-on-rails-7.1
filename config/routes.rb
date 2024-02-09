@@ -13,6 +13,7 @@ Rails.application.routes.draw do
           get :get_tags
         end
         resources :comments, only: [:create] # Rutas anidadas para comentarios
+        get :comments, to: 'comments#index' # Ruta para mostrar los comentarios de una pregunta específica
       end
     end
   end

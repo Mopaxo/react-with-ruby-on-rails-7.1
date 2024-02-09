@@ -32,11 +32,14 @@ const EditAnswer = ({ id , updateAnswer}) => {
             setAnswer("");
             // Llama a la función updateAnswer del padre con la nueva respuesta
             updateAnswer(data.newAnswer);
+            console.log("New answer:", data.newAnswer);
+
           }
         })
         .catch((error) => {
           console.log("Error:", error);
         });
+        
     };
   
     return (

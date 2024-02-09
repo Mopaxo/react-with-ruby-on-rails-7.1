@@ -81,6 +81,7 @@ class QuestionDetail extends React.Component {
                 type="button"
                 className="btn btn-primary position-relative ms-2"
                 onClick={this.updateDislikeCount}
+                style={{ marginRight: "3px" }}
               >
                 <i className="bi bi-hand-thumbs-down"></i>
                 {this.state.dislikeCount > 0 && (
@@ -88,6 +89,13 @@ class QuestionDetail extends React.Component {
                     {this.state.dislikeCount}
                   </span>
                 )}
+              </button>
+              <button
+                type="button"
+                className="btn btn-primary ms-2"
+                onClick={() => { window.location.href = `/api/v1/questions/${this.props.question.id}/comments`; }}
+              >
+                <i className="bi bi-chat-square-dots"></i>
               </button>
             </div>
             
